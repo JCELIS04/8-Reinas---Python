@@ -1,5 +1,6 @@
 import random
 import matplotlib.pyplot
+#Librerias necesarias para los numeros aleatorios y para el entorno gráfico
 
 # Población de generación inicial, la capacidad de población es 4, para mejorar la eficiencia de iteración, los 8 códigos de la población inicial son diferentes
 def Initiate(a):
@@ -62,7 +63,7 @@ def ChooseParents(a,b,c,d):
     parents.append(secmother)
     return parents
 
-Operador #Cross, este programa usa cross secuencial
+# Operador Cross, este programa usa cross secuencial
 def cross(parents):
     children = []
     crosspoint=random.randint(1,7)
@@ -128,13 +129,13 @@ for i in range(maxGenerations):
             answer.append(mparents[2])
         if fitness['d'] == 28:
             answer.append(mparents[3])
-        print("This answer is {0}".format(answer))
-        print("Find if after {0} times".format(generations))
+        print("La respuesta es: {0}".format(answer))
+        print("Encontrada despues de {0} tiempos".format(generations))
         # Visualización de soluciones factibles
         for i in answer:
             y=[i.index(1)+0.5, i.index(2)+0.5, i.index(3)+0.5, i.index(4)+0.5, i.index(5)+0.5, i.index(6)+0.5, i.index(7)+0.5, i.index(8)+0.5]
         x=[0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5]
-        matplotlib.pyplot.title("Using Genetic Algorithm to Solve 8-Queens' Problem")
+        matplotlib.pyplot.title("PROBLEMA DE LAS 8 REINAS CON ALGORITMO GENETICO")
         matplotlib.pyplot.axis([0,8,0,8])
         matplotlib.pyplot.grid()
         matplotlib.pyplot.plot(x, y, '*')
